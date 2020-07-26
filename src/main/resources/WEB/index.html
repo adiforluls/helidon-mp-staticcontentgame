@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  color : aquamarine;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: black;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=number] {
+  width: 20%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=number] {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #ddd;
+  color: black;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.btn:hover {
+  background-color: #3e8e41;
+  color: white;
+  opacity: 1;
+  transform: scale(1.2);
+}
+.collapsible {
+  background-color: #ddd;
+  color: black;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.collapsible:hover {
+  background-color: #3e8e41;
+  color: white;
+  opacity: 1;
+  transform: scale(1.2);
+}
+ul, #myUL {
+  list-style-type: none;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: black;
+} 
+
+</style>
+</head>
+<body>
+    
+    <h1 style="text-align: center;">Guess what?</h1><br><br>
+
+
+   
+    <h3>Info:</h3>
+    <p>Get yourself registered, then head over to play, where you have to pick an integer between 0-100.</p>
+    <p>If your guess is the closest to 2/3 of the average of all the user responses, you win free internet points!</p><br><br>
+
+    <button class="collapsible" type="btn" style="width: 10%;">New User?</button>
+      <div class="content">
+        <br>
+              <input type="text" placeholder="Enter Username" id="newusername" autocomplete="off" required><br>
+              <button type="submit" class="btn" style="width:10%" onclick="userRegister()" value="submit">Register</button>
+                <br>
+                <p id="status1"></p>
+      </div>
+      <br><br><br>
+    <button class="collapsible" style="width: 10%;">Lets Play!</button>
+    <div class="content">
+      <br>
+            <input type="text" placeholder="Enter Username" id="regusername" autocomplete="off" required><br>
+            <input type="number" placeholder="Enter your guess" id="guess" required><br>
+            <button type="submit" class="btn" style="width:10%" onclick="userGuess()" value="submit">Submit</button>
+              <br>
+              <p id="status2"></p>
+    </div>
+    <br><br><br>
+
+    <button class = "collapsible" style = "width: 10%" onclick="getWinner()">Who's winning?</button>
+    <div class="content">
+      <br>
+      <p id="win"></p>
+    </div>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+  </script>
+  <script src="gtapp.js"></script>
+
+</body>
+</html>
