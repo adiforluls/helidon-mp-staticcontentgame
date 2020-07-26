@@ -15,7 +15,7 @@ Helidon MP example to demonstrate static content support.
 With JDK11+
 ```bash
 mvn package
-java -jar target/myartifactid.jar
+java -jar target/helidon-examples-microprofile-static-content.jar
 ```
 
 ## Exercise the application
