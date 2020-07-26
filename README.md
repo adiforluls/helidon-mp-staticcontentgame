@@ -3,7 +3,8 @@
 Helidon MP example to demonstrate static content support.
 
 # Prerequisites:
-   ``` • Java SE 11+ (Open JDK 11) or newer
+   ``` 
+    • Java SE 11+ (Open JDK 11) or newer
     • Maven 3.6.1+
     • Docker 18.09+
     • Operating System: Linux 
